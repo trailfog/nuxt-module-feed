@@ -42,7 +42,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build the package
-        run: pnpm run build
+        run: pnpm run prepack
 
       - name: Publish to GitHub npm
         run: pnpm publish --registry=https://npm.pkg.github.com/
