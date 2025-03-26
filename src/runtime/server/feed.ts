@@ -30,7 +30,8 @@ async function createFeed(options: SourceOptions): Promise<string> {
 
 export default defineEventHandler(async (event: H3Event) => {
   const options = (feedOptions as Record<string, SourceOptions>)[event.node.req.url as string]
-  setHeader(event, 'content-type', resolveContentType(options.type))
+  const contentType = resolveContentType(options.type);
+  setHeader(event, 'content-type',  + `${contentType}; charset=UTF-8`)
   setHeader(event, 'cache-control', `max-age=${options.cacheTime}`)
   const feed = await createFeed(options)
   return feed
