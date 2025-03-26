@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-module-feed",
+  "name": "@trailfog/nuxt-module-feed",
   "version": "1.1.4",
   "description": "Nuxt 3 feed module enables everyone to have RSS, Atom and JSON",
-  "repository": "https://github.com/tresko/nuxt-module-feed",
+  "repository": "https://github.com/trailfog/nuxt-module-feed",
   "license": "MIT",
   "contributors": [
     "Miha Sedej <sedej.miha@gmail.com>"
