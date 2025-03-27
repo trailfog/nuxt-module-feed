@@ -1,5 +1,5 @@
 {
-  "name": "@trailfog/nuxt-module-feed",
+  "name": "@foxoystercat/nuxt-module-feed",
   "version": "1.1.4",
   "description": "Nuxt 3 feed module enables everyone to have RSS, Atom and JSON",
   "repository": "https://github.com/trailfog/nuxt-module-feed",

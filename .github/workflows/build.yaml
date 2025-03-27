@@ -32,11 +32,11 @@ jobs:
       - name: Set up pnpm store
         run: pnpm config set store-dir ~/.pnpm-store
 
-      - name: Authenticate with GitHub npm registry
+      - name: Authenticate with npm registry
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${AUTH_TOKEN}" >> ~/.npmrc
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -44,7 +44,5 @@ jobs:
       - name: Build the package
         run: pnpm run prepack
 
-      - name: Publish to GitHub npm
-        run: pnpm publish --registry=https://npm.pkg.github.com/
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Publish to npm
+        run: pnpm publish --access public
